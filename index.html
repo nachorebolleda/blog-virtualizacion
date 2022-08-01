@@ -244,17 +244,22 @@
         var comision = document.getElementById("comision");
 
         async function getStaticsProps(){
+            console.log("macaco1")
             const datospersonales = await fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() });
+            console.log("macaco2")
 
             console.log(datospersonales['Nombre']);
             console.log(datospersonales);
             nombre.innerText(datospersonales['Nombre']);
 
+
             const contenedores = await fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
         }
         
         getStaticsProps();
-        
+
+        console.log("macaco3");
+
     </script>
 
 </body>
