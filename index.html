@@ -136,13 +136,13 @@
                         <div class="card-body">
                             <h4 class="card-title text-center">Información Personal</h4>
                             <p class="card-text"><b>Nombre:</b>
-                            <span id="nombre">Rebolleda, Jose Ignacio</span>
+                            <span id="nombre"></span>
                             </p>
                             <p class="card-text"><b>Legajo:</b>
-                            <span id="legajo">46.285</span>
+                            <span id="legajo"></span>
                             </p>
                             <p class="card-text"><b>Comisión:</b>
-                            <span id="comision">5K3</span>
+                            <span id="comision"></span>
                             </p>
                             <p class="card-text"><b>Edad:</b>
                             <span id="edad">23 años</span>
@@ -225,12 +225,28 @@
     </div>
 
     <script>
+        var nombre1 = document.getElementById("nombre1");
+        var id1 = document.getElementById("id1");
+        var memoria1 = document.getElementById("memoria1");
+        var almacenamiento1 = document.getElementById("almacenamiento1");
+        var procesador1 = document.getElementById("procesador1");
+        var ip1 = document.getElementById("ip1");
 
-        async function getStaticsProps(){
-            const datospersonales = await fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() } )
-            console.log(res);
-        }
-        getStaticsProps();
+        var nombre2 = document.getElementById("nombre2");
+        var id2 = document.getElementById("id2");
+        var memoria2 = document.getElementById("memoria2");
+        var almacenamiento2 = document.getElementById("almacenamiento2");
+        var procesador2 = document.getElementById("procesador2");
+        var ip2 = document.getElementById("ip2");
+
+        var nombre = document.getElementById("nombre");
+        var legajo = document.getElementById("legajo");
+        var comision = document.getElementById("comision");
+
+        const datospersonales = await fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() });
+        const contenedores = await fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
+
+        nombre.innerText(datospersonales);
 
     </script>
 
