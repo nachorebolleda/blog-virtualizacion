@@ -253,10 +253,19 @@
             nombre.innerText(datospersonales['Nombre']);
 
 
-            const contenedores = await fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
+            //const contenedores = await fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
         }
-        
-        getStaticsProps();
+
+        const Http = new XMLHttpRequest();
+            const url='http://192.168.88.133:4500/datos';
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+            console.log(Http.responseText)
+            }
+
+        //getStaticsProps();
 
         console.log("macaco3");
 
