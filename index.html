@@ -254,6 +254,15 @@
         }
         buscarDatos();
 
+            const Http = new XMLHttpRequest();
+            const url='http://192.168.88.133:8080/alumnos';
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+            console.log(Http.responseText)
+}
+
     </script>
 
 </body>
