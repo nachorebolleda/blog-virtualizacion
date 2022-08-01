@@ -243,8 +243,8 @@
         var legajo = document.getElementById("legajo");
         var comision = document.getElementById("comision");
 
-        const datospersonales = await fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() });
-        const contenedores = await fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
+        const datospersonales = fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() });
+        const contenedores = fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
 
         nombre.innerText(datospersonales);
 
