@@ -243,8 +243,18 @@
         var legajo = document.getElementById("legajo");
         var comision = document.getElementById("comision");
 
+        const Http = new XMLHttpRequest();
+            const url='http://192.168.88.133:8080/alumnos';
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+            console.log(Http.responseText)
+
         async function buscarDatos(){
-            const datospersonales = await fetch('http://192.168.88.133:8080/alumnos').then(res => {return res.text() });
+            const datospersonales = await fetch('http://192.168.88.133:8080/alumnos').then(res => {return res.json() });
+
+
 
             console.log(datospersonales['Nombre']);
             console.log(datospersonales);
@@ -252,15 +262,9 @@
 
             //const contenedores = await fetch('http://192.168.88.133:8080/contenedores').then(res => { return res.json() });
         }
-        buscarDatos();
+//        buscarDatos();
 
-            const Http = new XMLHttpRequest();
-            const url='http://192.168.88.133:8080/alumnos';
-            Http.open("GET", url);
-            Http.send();
 
-            Http.onreadystatechange = (e) => {
-            console.log(Http.responseText)
 }
 
     </script>
