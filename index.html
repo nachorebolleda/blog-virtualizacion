@@ -245,27 +245,27 @@
 
         async function getStaticsProps(){
             console.log("macaco1")
-            const datospersonales = await fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() });
+            const datospersonales = await fetch('http://192.168.88.133:4500/alumnos').then(res => { return res.json() });
             console.log("macaco2")
 
             console.log(datospersonales['Nombre']);
             console.log(datospersonales);
             nombre.innerText(datospersonales['Nombre']);
 
-
             //const contenedores = await fetch('http://192.168.88.133:4500/contenedores').then(res => { return res.json() });
         }
+        getStaticsProps();
 
         const Http = new XMLHttpRequest();
-            const url='http://192.168.88.133:4500/datos';
+            const url='http://192.168.88.133:4500/alumnos';
             Http.open("GET", url);
             Http.send();
 
             Http.onreadystatechange = (e) => {
             console.log(Http.responseText)
             }
+        console.log(Http.responseText);
 
-        //getStaticsProps();
 
         console.log("macaco3");
 
