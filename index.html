@@ -243,6 +243,9 @@
         var legajo = document.getElementById("legajo");
         var comision = document.getElementById("comision");
 
+        var asd = fetch('http://192.168.88.133:4500/ping').then(res => {return res.text() });
+        console.log(asd);
+
         async function buscarDatos(){
             const datospersonales = await fetch('http://192.168.88.133:4500/alumnos').then(res => {return res.json() });
 
