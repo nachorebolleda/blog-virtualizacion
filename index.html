@@ -225,13 +225,17 @@
     </div>
 
     <script>
+
         async function getStaticsProps(){
             const datospersonales = await fetch('http://192.168.88.133:4500/datos').then(res => { return res.json() } )
             console.log(res);
         }
+        getStaticsProps();
+
     </script>
 
 </body>
+
 <footer class="site-footer">
     <div class="container" id="containerfooter">
         <div class="row">
