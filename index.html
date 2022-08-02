@@ -136,13 +136,13 @@
                         <div class="card-body">
                             <h4 class="card-title text-center">Información Personal</h4>
                             <p class="card-text"><b>Nombre:</b>
-                            <span id="nombrepropio"></span>
+                            <span id="nombrepropio">Rebolleda, Jose Ignacio</span>
                             </p>
                             <p class="card-text"><b>Legajo:</b>
-                            <span id="legajo"></span>
+                            <span id="legajo">46285</span>
                             </p>
                             <p class="card-text"><b>Comisión:</b>
-                            <span id="comision"></span>
+                            <span id="comision">5K3</span>
                             </p>
                             <p class="card-text"><b>Edad:</b>
                             <span id="edad">23 años</span>
@@ -201,12 +201,12 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th id="nombre1"></th>
-                            <td id="id1"></td>
-                            <td id="memoria1"></td>
-                            <td id="almacenamiento1"></td>
-                            <td id="procesador1"></td>
-                            <td id="ip1"></td>
+                            <th id="nombre1">41649501i</th>
+                            <td id="id1">116</td>
+                            <td id="memoria1">512Mib</td>
+                            <td id="almacenamiento1">2Gib</td>
+                            <td id="procesador1">1 nucleo</td>
+                            <td id="ip1">192.168.88.132/24</td>
                           </tr>
                           <tr>
                             <th id="nombre2">41649501db</th>
@@ -225,8 +225,6 @@
     </div>
 
     <script>
-
-            console.log(fetch('http://192.168.88.133:5000/alumnos').then(res => {return res.json() }));
 
         var nombre1 = document.getElementById("nombre1");
         var id1 = document.getElementById("id1");
@@ -252,26 +250,26 @@
             const datospersonales = await fetch('http://192.168.88.133:5000/alumnos').then(res => {return res.json() });
             console.log(datospersonales);
 
-            // nombre.innerText =  datospersonales['Apellido'] + datospersonales['Nombre'];
-            // legajo.innerText =  datospersonales['Legajo'];
-            // comision.innerText =  datospersonales['Comision'];
+            nombre.innerText =  datospersonales['Apellido'] + ', ' + datospersonales['Nombre'];
+            legajo.innerText =  datospersonales['Legajo'];
+            comision.innerText =  datospersonales['Comision'];
 
-            // const contenedores = await fetch('http://192.168.88.133:5000/contenedores').then(res => { return res.json() });
-            // console.log(contenedores);
+            const contenedores = await fetch('http://192.168.88.133:5000/contenedores').then(res => { return res.json() });
+            console.log(contenedores);
 
-            // nombre1.innerText =  "41649501i";
-            // id1.innerText =  contenedores['ID'][0];
-            // memoria1.innerText =  contenedores['Memoria'][0];
-            // almacenamiento1.innerText =  contenedores['Almacenamiento'][0];
-            // procesador1.innerText =  contenedores['Procesador'][0];
-            // ip1.innerText =  contenedores['IP'][0];
+            nombre1.innerText =  "41649501i";
+            id1.innerText =  contenedores['ID'][0];
+            memoria1.innerText =  contenedores['Memoria'][0];
+            almacenamiento1.innerText =  contenedores['Almacenamiento'][0];
+            procesador1.innerText =  contenedores['Procesador'][0];
+            ip1.innerText =  contenedores['IP'][0];
             
-            // nombre2.innerText =  "41649501db";
-            // id2.innerText =  contenedores['ID'][1];
-            // memoria2.innerText =  contenedores['Memoria'][1];
-            // almacenamiento2.innerText =  contenedores['Almacenamiento'][1];
-            // procesador2.innerText =  contenedores['Procesador'][1];
-            // ip2.innerText =  contenedores['IP'][1];
+            nombre2.innerText =  "41649501db";
+            id2.innerText =  contenedores['ID'][1];
+            memoria2.innerText =  contenedores['Memoria'][1];
+            almacenamiento2.innerText =  contenedores['Almacenamiento'][1];
+            procesador2.innerText =  contenedores['Procesador'][1];
+            ip2.innerText =  contenedores['IP'][1];
 
         }
         buscarDatos();
