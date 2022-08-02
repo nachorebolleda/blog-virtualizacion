@@ -247,29 +247,29 @@
         
 
         async function buscarDatos(){
-            const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() });
-            console.log(datospersonales);
+            //const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() });
+            console.log(fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() }));
 
-            nombre.innerText =  datospersonales['Apellido'] + datospersonales['Nombre'];
-            legajo.innerText =  datospersonales['Legajo'];
-            comision.innerText =  datospersonales['Comision'];
+            // nombre.innerText =  datospersonales['Apellido'] + datospersonales['Nombre'];
+            // legajo.innerText =  datospersonales['Legajo'];
+            // comision.innerText =  datospersonales['Comision'];
 
-            const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
-            console.log(contenedores);
+            // const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
+            // console.log(contenedores);
 
-            nombre1.innerText =  "41649501i";
-            id1.innerText =  contenedores['ID'][0];
-            memoria1.innerText =  contenedores['Memoria'][0];
-            almacenamiento1.innerText =  contenedores['Almacenamiento'][0];
-            procesador1.innerText =  contenedores['Procesador'][0];
-            ip1.innerText =  contenedores['IP'][0];
+            // nombre1.innerText =  "41649501i";
+            // id1.innerText =  contenedores['ID'][0];
+            // memoria1.innerText =  contenedores['Memoria'][0];
+            // almacenamiento1.innerText =  contenedores['Almacenamiento'][0];
+            // procesador1.innerText =  contenedores['Procesador'][0];
+            // ip1.innerText =  contenedores['IP'][0];
             
-            nombre2.innerText =  "41649501db";
-            id2.innerText =  contenedores['ID'][1];
-            memoria2.innerText =  contenedores['Memoria'][1];
-            almacenamiento2.innerText =  contenedores['Almacenamiento'][1];
-            procesador2.innerText =  contenedores['Procesador'][1];
-            ip2.innerText =  contenedores['IP'][1];
+            // nombre2.innerText =  "41649501db";
+            // id2.innerText =  contenedores['ID'][1];
+            // memoria2.innerText =  contenedores['Memoria'][1];
+            // almacenamiento2.innerText =  contenedores['Almacenamiento'][1];
+            // procesador2.innerText =  contenedores['Procesador'][1];
+            // ip2.innerText =  contenedores['IP'][1];
 
         }
         buscarDatos();
