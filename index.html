@@ -226,18 +226,6 @@
 
     <script>
 
-        const prueba = {
-            "nombre": "Jonh Doe",
-            "profesion":"Programador",
-            "edad":25,
-            "lenguajes":["PHP","Javascript","Dart"],
-            "disponibilidadParaViajar":true,
-            "rangoProfesional": {
-                "aniosDeExperiencia": 12,
-                "nivel": "Senior"
-            }
-        }
-
         var nombre1 = document.getElementById("nombre1");
         var id1 = document.getElementById("id1");
         var memoria1 = document.getElementById("memoria1");
@@ -259,14 +247,14 @@
         
 
         async function buscarDatos(){
-            const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res });
+            const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() });
             console.log(datospersonales);
 
             nombre.innerText =  datospersonales['Apellido'] + datospersonales['Nombre'];
             legajo.innerText =  datospersonales['Legajo'];
             comision.innerText =  datospersonales['Comision'];
 
-            const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res });
+            const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
             console.log(contenedores);
 
             nombre1.innerText =  "41649501i";
