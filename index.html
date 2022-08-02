@@ -136,7 +136,7 @@
                         <div class="card-body">
                             <h4 class="card-title text-center">Información Personal</h4>
                             <p class="card-text"><b>Nombre:</b>
-                            <span id="nombre"></span>
+                            <span id="nombrepropio"></span>
                             </p>
                             <p class="card-text"><b>Legajo:</b>
                             <span id="legajo"></span>
@@ -225,6 +225,19 @@
     </div>
 
     <script>
+
+        const prueba = {
+            "nombre": "Jonh Doe",
+            "profesion":"Programador",
+            "edad":25,
+            "lenguajes":["PHP","Javascript","Dart"],
+            "disponibilidadParaViajar":true,
+            "rangoProfesional": {
+                "aniosDeExperiencia": 12,
+                "nivel": "Senior"
+            }
+        }
+
         var nombre1 = document.getElementById("nombre1");
         var id1 = document.getElementById("id1");
         var memoria1 = document.getElementById("memoria1");
@@ -239,20 +252,37 @@
         var procesador2 = document.getElementById("procesador2");
         var ip2 = document.getElementById("ip2");
 
-        var nombre = document.getElementById("nombre");
+        var nombre = document.getElementById("nombrepropio");
         var legajo = document.getElementById("legajo");
         var comision = document.getElementById("comision");
 
+        
+
         async function buscarDatos(){
             const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() });
-
-
-
-            console.log(datospersonales['Nombre']);
             console.log(datospersonales);
-            nombre.innerText(datospersonales['Nombre']);
 
-            //const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
+            nombre.innerText =  datospersonales['Apellido'] + datospersonales['Nombre'];
+            legajo.innerText =  datospersonales['Legajo'];
+            comision.innerText =  datospersonales['Comision'];
+
+            const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
+            console.log(contenedores);
+
+            nombre1.innerText =  "41649501i";
+            id1.innerText =  contenedores['ID'][0];
+            memoria1.innerText =  contenedores['Memoria'][0];
+            almacenamiento1.innerText =  contenedores['Almacenamiento'][0];
+            procesador1.innerText =  contenedores['Procesador'][0];
+            ip1.innerText =  contenedores['IP'][0];
+            
+            nombre2.innerText =  "41649501db";
+            id2.innerText =  contenedores['ID'][1];
+            memoria2.innerText =  contenedores['Memoria'][1];
+            almacenamiento2.innerText =  contenedores['Almacenamiento'][1];
+            procesador2.innerText =  contenedores['Procesador'][1];
+            ip2.innerText =  contenedores['IP'][1];
+
         }
         buscarDatos();
 
