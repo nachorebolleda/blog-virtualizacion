@@ -247,14 +247,14 @@
         
 
         async function buscarDatos(){
-            //const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() });
-            console.log(fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() }));
+            const datospersonales = await fetch('http://192.168.88.133:5000/alumnos').then(res => {return res.json() });
+            console.log(datospersonales);
 
             // nombre.innerText =  datospersonales['Apellido'] + datospersonales['Nombre'];
             // legajo.innerText =  datospersonales['Legajo'];
             // comision.innerText =  datospersonales['Comision'];
 
-            // const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
+            // const contenedores = await fetch('http://192.168.88.133:5000/contenedores').then(res => { return res.json() });
             // console.log(contenedores);
 
             // nombre1.innerText =  "41649501i";
