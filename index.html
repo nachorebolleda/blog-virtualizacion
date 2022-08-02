@@ -243,33 +243,16 @@
         var legajo = document.getElementById("legajo");
         var comision = document.getElementById("comision");
 
-        // funcion para cuando la llamada es exitosa
-        function exito() {
-            var datos = JSON.parse(this.responseText); //convertir a JSON
-            console.log(datos);
-        }
-
-        // funcion para la llamada fallida
-        function error(err) {
-            console.log('Solicitud fallida', err); //los detalles en el objecto "err"
-        }
-
-        // var xhr = new XMLHttpRequest(); //invocar nueva instancia de XMLHttpRequest
-        // xhr.onload = exito; // llamar a la funcion exito si exitosa
-        // xhr.onerror = error;  // llamar a la funcion error si fallida
-        // xhr.open('GET', 'https://api.github.com/users/manishmshiva'); // Abrir solicitud GET
-        // xhr.send(); // mandar la solicitud al vervidor.
-
         async function buscarDatos(){
-            const datospersonales = await fetch('https://api.github.com/users/manishmshiva').then(res => {return res.json() });
+            const datospersonales = await fetch('http://192.168.88.133:3000/alumnos').then(res => {return res.json() });
 
 
 
-           // console.log(datospersonales['Nombre']);
+            console.log(datospersonales['Nombre']);
             console.log(datospersonales);
-           //nombre.innerText(datospersonales['Nombre']);
+            nombre.innerText(datospersonales['Nombre']);
 
-            //const contenedores = await fetch('http://192.168.88.133:8080/contenedores').then(res => { return res.json() });
+            //const contenedores = await fetch('http://192.168.88.133:3000/contenedores').then(res => { return res.json() });
         }
         buscarDatos();
 
